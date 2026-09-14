@@ -15,7 +15,7 @@
             Kalkulator Tilt Angel Panel Surya
           </h1>
           <p class="text-slate-600 text-sm">
-            Masukkan parameter geografis dan radiasi lokasi Anda untuk mendapatkan hasil analisis data yang optimal.
+            Masukkan parameter geografis dan radiasi lokasi Anda untuk mendapatkan analisis data yang optimal.
           </p>
         </div>
       </div>
@@ -110,11 +110,11 @@
 </div>
           </div>
 
-          <button type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-blue-500/45 transition-all flex items-center justify-center gap-2">
+          <button type="submit" class="w-full py-3 px-6 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl shadow-md shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-blue-500/45 transition-all flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
-            Generate Hasil Analisis
+            Generate Analisis
           </button>
         </form>
       </div>
