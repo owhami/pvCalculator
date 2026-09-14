@@ -120,40 +120,51 @@
       </div>
 
       <!-- Panel Spec Card (Optional, for energy estimate) -->
-      <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 p-6 md:p-8">
-        <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
-          <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          Spesifikasi Panel Surya (Opsional)
-        </h2>
-        <p class="text-slate-500 text-xs mb-6">
-          Gunakan jika ingin melihat estimasi energi listrik yang dihasilkan (kWh), bukan cuma sudut optimalnya saja. Kosongkan jika belum tahu spesifikasi panelnya.
-        </p>
+<div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+  <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>
+    Spesifikasi Panel Surya (Opsional)
+  </h2>
+  <p class="text-slate-500 text-xs mb-6">
+    Gunakan jika ingin melihat estimasi energi listrik (kWh). Kosongkan jika belum tahu spesifikasinya.
+  </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="space-y-1.5">
-            <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
-              Luas Panel (m²):
-            </label>
-            <input v-model.number="form.panelArea" type="number" step="any" min="0" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 1.8" />
-          </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="space-y-1.5">
+      <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
+        Panjang Panel (mm):
+      </label>
+      <input v-model.number="form.panelLength" type="number" step="any" min="0" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 2382" />
+    </div>
 
-          <div class="space-y-1.5">
-            <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
-              Efisiensi Panel (%):
-            </label>
-            <input v-model.number="form.panelEfficiency" type="number" step="any" min="0" max="100" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 20 (Panel Monokristal)" />
-          </div>
+    <div class="space-y-1.5">
+      <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
+        Lebar Panel (mm):
+      </label>
+      <input v-model.number="form.panelWidth" type="number" step="any" min="0" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 1134" />
+    </div>
 
-          <div class="space-y-1.5">
-            <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
-              Performance Ratio (PR):
-            </label>
-            <input v-model.number="form.performanceRatio" type="number" step="any" min="0" max="1" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 0.8 (rugi-rugi sistem)" />
-          </div>
-        </div>
-      </div>
+    <div class="space-y-1.5">
+      <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
+        Efisiensi Panel (%):
+      </label>
+      <input v-model.number="form.panelEfficiency" type="number" step="any" min="0" max="100" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 23.3" />
+    </div>
+
+    <div class="space-y-1.5">
+      <label class="block text-xs font-semibold tracking-wider text-slate-600 uppercase">
+        Performance Ratio (PR):
+      </label>
+      <input v-model.number="form.performanceRatio" type="number" step="any" min="0" max="1" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all" placeholder="E.g: 0.8" />
+    </div>
+  </div>
+
+  <div v-if="form.panelLength && form.panelWidth" class="mt-4 text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg inline-block">
+    Luas Panel Terhitung: <strong>{{ ((form.panelLength / 1000) * (form.panelWidth / 1000)).toFixed(2) }} m²</strong>
+  </div>
+</div>
     </main>
 
     <!-- Modal Popup with Backdrop Blur -->
@@ -263,7 +274,8 @@ const form = reactive({
   hd: null,
   terrainType: 'flat',
   terrainSlope: null,
-  panelArea: null,
+  panelLength: null,
+  panelWidth: null,
   panelEfficiency: null,
   performanceRatio: null
 })
@@ -343,11 +355,12 @@ const calculateMonthlyTilt = () => {
 
   // Estimasi energi hanya aktif jika spesifikasi panel diisi lengkap dan valid
   energyEstimateActive.value = (
-    form.panelArea !== null && form.panelArea > 0 &&
+    form.panelLength !== null && form.panelLength > 0 &&
+    form.panelWidth !== null && form.panelWidth > 0 &&
     form.panelEfficiency !== null && form.panelEfficiency > 0 &&
     form.performanceRatio !== null && form.performanceRatio > 0
   )
-  const panelArea = form.panelArea
+  const panelArea = (form.panelLength/1000) * (form.panelWidth/1000)
   const panelEfficiency = form.panelEfficiency
   const performanceRatio = form.performanceRatio
 
