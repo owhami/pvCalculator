@@ -1,4 +1,3 @@
-<!-- app.vue (Nuxt 3) - Fixed Modal Popup Version -->
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-100 text-slate-800 font-sans antialiased py-10 px-4 sm:px-6 lg:px-8 relative">
     <main class="max-w-3xl mx-auto space-y-8">
@@ -129,7 +128,7 @@
           Spesifikasi Panel Surya (Opsional)
         </h2>
         <p class="text-slate-500 text-xs mb-6">
-          Isi bagian ini jika ingin melihat estimasi energi listrik yang dihasilkan (kWh), bukan cuma sudut optimalnya saja. Kosongkan jika belum tahu spesifikasi panelnya.
+          Gunakan jika ingin melihat estimasi energi listrik yang dihasilkan (kWh), bukan cuma sudut optimalnya saja. Kosongkan jika belum tahu spesifikasi panelnya.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -342,7 +341,7 @@ const calculateMonthlyTilt = () => {
   const s = form.terrainType === 'sloped' ? (form.terrainSlope || 0) : 0
   const sRad = toRad(s)
 
-  // Estimasi energi hanya aktif kalau spesifikasi panel diisi lengkap dan valid
+  // Estimasi energi hanya aktif jika spesifikasi panel diisi lengkap dan valid
   energyEstimateActive.value = (
     form.panelArea !== null && form.panelArea > 0 &&
     form.panelEfficiency !== null && form.panelEfficiency > 0 &&
@@ -414,7 +413,7 @@ const calculateMonthlyTilt = () => {
   })
 
   monthlyResults.value = results
-  showModal.value = true // Memicu pop-up untuk tampil
+  showModal.value = true 
 }
 
 const copyResultsToClipboard = () => {
